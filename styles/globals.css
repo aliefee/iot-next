@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
 html,
 body {
   padding: 0;
@@ -13,4 +15,165 @@ a {
 
 * {
   box-sizing: border-box;
+}
+/** box */
+.mybox {
+  border-radius: 29px 29px 15px 15px;
+  border: 6px solid grey;
+  width: 220px;
+  height: 338px;  
+}
+.mybox-top {
+  margin-bottom: -4px;
+  border-radius: 3px 3px 0px 0px;
+  border: 4px solid grey;
+  padding: 3px; 
+  width: 34px;
+  height: 48px;  
+}
+/** water static */
+.water-static {
+  position: absolute;
+  border-radius: 0px 0px 9px 9px;
+  width: 100%;
+  height: 0px;
+  bottom: 0px;
+  background: #BBCCEE;
+}
+/** water anim */
+.water-container {
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.water-base,
+.water-wave {
+  position: absolute;
+  bottom: 0px;
+  background: #BBCCEE;
+}
+
+.water-base {
+  border-radius: 0px;
+  width: 100%;
+  height: 8px;
+  -webkit-animation: shrinking 4s infinite linear;
+  -moz-animation: shrinking 4s infinite linear;
+  animation: shrinking 4s infinite linear;
+}
+
+.water-wave {
+  width: 250%;
+  height: 10px;
+  border-radius: 100%;
+  -webkit-animation: waving 4s infinite linear;
+  -moz-animation: waving 4s infinite linear;
+  animation: waving 4s infinite linear;
+}
+
+@-webkit-keyframes waving {
+  0% {
+    transform: translateX(-100%);
+    height: 24px;
+  }
+  100% {
+    transform: translateX(100%);
+    height: 16px;
+  }
+}
+
+@-moz-keyframes waving {
+  0% {
+    transform: translateX(-100%);
+    height: 24px;
+  }
+  100% {
+    transform: translateX(100%);
+    height: 16px;
+  }
+}
+
+@-o-keyframes waving {
+  0% {
+    transform: translateX(-100%);
+    height: 24px;
+  }
+  100% {
+    transform: translateX(100%);
+    height: 16px;
+  }
+}
+
+@keyframes waving {
+  0% {
+    transform: translateX(-100%);
+    height: 24px;
+  }
+  100% {
+    transform: translateX(100%);
+    height: 16px;
+  }
+}
+
+@-webkit-keyframes shrinking {
+  0% {
+    height: 16px;
+  }
+  20% {
+    height: 20px;
+  }
+  80% {
+    height: 13px;
+  }
+  100% {
+    height: 14px;
+  }
+}
+
+@-moz-keyframes shrinking {
+  0% {
+    height: 16px;
+  }
+  20% {
+    height: 20px;
+  }
+  80% {
+    height: 13px;
+  }
+  100% {
+    height: 14px;
+  }
+}
+
+@-o-keyframes shrinking {
+  0% {
+    height: 16px;
+  }
+  20% {
+    height: 20px;
+  }
+  80% {
+    height: 13px;
+  }
+  100% {
+    height: 14px;
+  }
+}
+
+@keyframes shrinking {
+  0% {
+    height: 16px;
+  }
+  20% {
+    height: 20px;
+  }
+  80% {
+    height: 13px;
+  }
+  100% {
+    height: 14px;
+  }
 }

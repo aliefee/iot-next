@@ -1,9 +1,9 @@
 import Layout from '../components/layout.jsx'
 
-export default function Home() {
+export default function Temperature() {
   return (
     <Layout>
-      <h2>Home</h2>
+      <p>temperature</p>
     </Layout>
   )
 }
