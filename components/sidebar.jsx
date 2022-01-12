@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from "next/router";
 import styles from '../styles/Home.module.css'
+import { Icon } from '@iconify/react';
 
 export default function Sidebar() {
 
@@ -11,13 +12,13 @@ export default function Sidebar() {
     <div className={styles.sidebar}>
     	<Link href="/">
 		  	<a className={router.pathname == "/" ? styles.active : ""}>
-			  	<span class="iconify" data-icon="ci:home-fill"></span>
+			  	<Icon icon="ci:home-fill" />
 			  	<p className={styles.menutext}>Home</p>
 		  	</a>
 		  </Link>
 		  <Link href="/water">
 		  	<a className={router.pathname == "/water" ? styles.active : ""}>
-			  	<span class="iconify" data-icon="healthicons:running-water"></span>
+		  		<Icon icon="healthicons:running-water" />
 			  	<p className={styles.menutext}>Water</p>
 		  	</a>
 		  </Link>
@@ -28,13 +29,13 @@ export default function Sidebar() {
 		  </Link>
 		  <Link href="/temperature">
 		  	<a className={router.pathname == "/temperature" ? styles.active : ""}>
-		  	<span class="iconify" data-icon="carbon:temperature-min"></span>
+		  	<Icon icon="carbon:temperature-min" />
 		  	<p className={styles.menutext}>Temperature</p>
 		  	</a>
 		  </Link>
 		  <Link href="/about">
 		  	<a className={router.pathname == "/about" ? styles.active : ""}>
-		  	<span class="iconify" data-icon="bi:exclamation-circle"></span>
+		  	<Icon icon="bi:exclamation-circle" />
 		  	<p className={styles.menutext}>About</p>
 		  	</a>
 		  </Link>

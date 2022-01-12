@@ -1,9 +1,11 @@
 import Layout from '../components/layout.jsx'
+import TempSens from '../components/tempsens.jsx'
 
 export default function Temperature() {
   return (
     <Layout>
-      <p>temperature</p>
+      <h2>Temperature</h2>
+      <TempSens></TempSens>
     </Layout>
   )
 }

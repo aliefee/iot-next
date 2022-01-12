@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useAppContext } from '../context/mystate.jsx';
 
 export default function WeightSens() {
-
+  const { wght_sub } = useAppContext();
+/*
 	const [waterHeight, setwaterHeight] = useState('0px')
 
 	const [weight, setWeight] = useState(0);
@@ -38,20 +40,15 @@ export default function WeightSens() {
   const id = setInterval(getData, 3000);
   return () => clearInterval(id);  
   }, []);
+*/
 
 	return(
     <>
-			<div className="mybox-top">
-			</div>
-			<div className="mybox">
-				<div className="water-container">
-					<div className="water-wave" style={{ bottom: waterHeight }}></div>
-				  <div className="water-base" style={{ bottom: waterHeight }}></div>
-					<div className="water-static" style={{ height: waterHeight }}></div>
-				</div>
+			<div>
+        <h2>Weight Sensor2 (5kg)</h2>
 			</div>
 			<div>
-      	<p>water level: {weight}</p>
+      	<p>{wght_sub} grams</p>
     	</div>
 		</>
 	)

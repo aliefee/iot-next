@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useAppContext } from '../context/mystate.jsx';
 
 export default function WaterLevel() {
-
+  const { wght } = useAppContext();
+ /*
 	const [waterHeight, setwaterHeight] = useState('0px')
 
 	const [weight, setWeight] = useState(0);
@@ -34,7 +36,7 @@ export default function WaterLevel() {
     , 5000);
   return () => clearInterval(id);  
   }, []);
-
+*/
 	return(
     <>
 			<div className="mybox-top">
@@ -47,7 +49,7 @@ export default function WaterLevel() {
 				</div>
 			</div>
 			<div>
-      	<p>water level: {weight}</p>
+      	<p>water level: {wght}</p>
     	</div>
 		</>
 	)
