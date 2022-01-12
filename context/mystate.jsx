@@ -22,7 +22,7 @@ export function AppWrapper({ children }) {
   // (Optional) Open a connection on mount
   useEffect(() => {
     if(isBrowser) { 
-      const ws = new WebSocket("ws://192.168.1.104:7890");
+      const ws = new WebSocket("ws://localhost:7890");
       setWsInstance(ws);
     }
     // Open the socket
