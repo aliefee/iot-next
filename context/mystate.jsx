@@ -21,8 +21,9 @@ export function AppWrapper({ children }) {
   const [wsInstance, setWsInstance] = useState(null);
   // (Optional) Open a connection on mount
   useEffect(() => {
-    if(isBrowser) { 
-      const ws = new WebSocket("ws://localhost:7890");
+    if(isBrowser) {
+      console.log(process.env.WS)
+      const ws = new WebSocket(process.env.NEXT_PUBLIC_WS);
       setWsInstance(ws);
     }
     // Open the socket
