@@ -3,7 +3,10 @@ import axios from "axios";
 import { useAppContext } from '../context/mystate.jsx';
 
 export default function WaterLevel() {
-  const { wght } = useAppContext();
+  const { wght, wtr_height } = useAppContext();
+  //const { wtr_height } = useAppContext();
+  //setwaterHeight(Math.round((wght-1000) / 1900 * 3)+"px");
+
  /*
 	const [waterHeight, setwaterHeight] = useState('0px')
 
@@ -43,13 +46,14 @@ export default function WaterLevel() {
 			</div>
 			<div className="mybox">
 				<div className="water-container">
-					<div className="water-wave" style={{ bottom: waterHeight }}></div>
-				  <div className="water-base" style={{ bottom: waterHeight }}></div>
-					<div className="water-static" style={{ height: waterHeight }}></div>
+					<div className="water-wave" style={{ bottom: wtr_height }}></div>
+				  <div className="water-base" style={{ bottom: wtr_height }}></div>
+					<div className="water-static" style={{ height: wtr_height }}></div>
 				</div>
 			</div>
-			<div>
-      	<p>water level: {wght}</p>
+			<div className="mybox-footer">
+      	<p>Water Level: { ((wght - process.env.NEXT_PUBLIC_DMCN) * 0.0052631578).toFixed(2) + '%' }</p>
+        <p className="kg-data">{ ((wght - process.env.NEXT_PUBLIC_DMCN) / 1000).toFixed(3) + ' kg' }</p>
     	</div>
 		</>
 	)

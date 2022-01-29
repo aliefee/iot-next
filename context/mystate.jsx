@@ -14,7 +14,8 @@ export function AppWrapper({ children }) {
   const [state, setState] = useState({
        value: '0',
        wght: '0',
-       wght_sub: '0'
+       wght_sub: '0',
+       wtr_height: '0px'
   });
   ////
 
@@ -33,13 +34,27 @@ export function AppWrapper({ children }) {
       // Listen for messages
       ws.onmessage = function(event) {
           console.log('Client received a message',event.data);
-          var partsArray = event.data.split(':');
+          // coming message example: s1:700_s2:800_s3:900
+          var sensors = event.data.split('_');
+          var sensor1 = sensors[0].split(':');
+          var sensor2 = sensors[1].split(':');
+          var sensor3 = sensors[2].split(':');
+          setState({ 
+            wght: sensor1[1], 
+            wtr_height: Math.round((sensor1[1]-process.env.NEXT_PUBLIC_DMCN) * 0.0157)+"px",
+            wght_sub: sensor2[1],
+            value: sensor3[1]
+          });
+          /**
           if (partsArray[0] == 's1')
-          	setState({ wght: partsArray[1] });
+          {
+            setState({ wght: partsArray[1], wtr_height: Math.round((partsArray[1]-1000) * 0.0157)+"px" });
+          }
           else if (partsArray[0] == 's2')
           	setState({ wght_sub: partsArray[1] })
           else if (partsArray[0] == 's3')
           	setState({ value: partsArray[1] })
+          */
       };
       // Listen for socket closes
       ws.onclose = function(event) {
