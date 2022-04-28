@@ -1,4 +1,8 @@
+## Introduction
+
 A simple frontend built on next.js framework with React client-side features and websockets. Frontend connects to an iot edge(websocket server) and shows current messages from websocket. Purpose was visualising current iot-sensor measurements on the web.  
+
+Update needed. Still might be helpful for beginners. Please feel free to open an issue or ask about implementation details.  
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
